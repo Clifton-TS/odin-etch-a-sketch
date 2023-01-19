@@ -8,8 +8,21 @@
     <title>Document</title>
 </head>
 <body>
+    <div class="canvas">
+        <div class="settings">
+            <div class="canvasSize">
+                <label for="size">Canvas size (2-50):</label>
+                <input type="number" class="numInput" name="size" min="2" max="50" value="16">
+            </div>
+            <div class="pickColor">
+                <label for="color">Pick your color.</label>
+                <input type="color" class="color" name="color" value="#000000">
+            </div>
+            <button type="clear" class="clear">Clear</button>
+        </div>
     
-
+        <div class="container"></div>
+    </div>
     <script src="javascript.js"></script>
 </body>
 </html>
