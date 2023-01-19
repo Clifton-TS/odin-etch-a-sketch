@@ -7,11 +7,6 @@ body {
     margin: 0;
     height: 100vh;
 }
-/* .canvas {
-    display: flex;
-    flex-direction: column;
-
-} */
 
 label {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -42,6 +37,11 @@ label {
 
 .clear {
     justify-self: flex-end;
+}
+
+.pickColor {
+    display: flex;
+    align-items: center;
 }
 
 /* * {border: red solid 1px;} */

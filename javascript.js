@@ -29,8 +29,13 @@ function createDiv(id) {
     div.setAttribute("id", id)
     div.classList.add("blankPixel")
     containerDiv.appendChild(div)
-    div.addEventListener("click", () => {
-        div.style.backgroundColor = color
+    div.addEventListener("mousedown", () => {
+        let random = document.querySelector(".random").checked
+        if (random == false) {
+            div.style.backgroundColor = color
+        }else {
+            div.style.backgroundColor = getRandomColor()
+        }
     })
 }
 
@@ -44,6 +49,16 @@ function createGrid() {
 function clearGrid() {
     pixels = document.querySelectorAll(".blankPixel")
     pixels.forEach(blankPixel => {blankPixel.remove()})
+}
+
+function getRandomColor() {
+    let result = "rgb("
+    for(i=0; i<3; i++) {
+        let randomNumber = Math.floor(Math.random() * 256)
+        result += randomNumber + " ";
+    }
+    result += ")"
+    return result
 }
 
 createGrid()
