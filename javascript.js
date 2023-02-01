@@ -6,6 +6,8 @@ let colorInput = document.querySelector(".color")
 let color = document.querySelector(".color").value
 let pixels = document.querySelectorAll(".blankPixel")
 let clear = document.querySelector(".clear")
+let currentInput = document.querySelector(".currentInput")
+currentInput.textContent = numInput.value
 
 clear.addEventListener("click", ()=> {
     clearGrid()
@@ -20,6 +22,7 @@ numInput.addEventListener("change", ()=> {
     clearGrid()
     num = document.querySelector(".numInput").value;
     divDimensions = 700 / num + "px"
+    currentInput.textContent = numInput.value
     createGrid()
 })
 
@@ -40,10 +43,12 @@ function createDiv(id) {
 }
 
 function createGrid() {
-    const grid = num * num
-    for(i = 0; i < grid; i++ ) {
-        createDiv(i)
-    }
+    if (num >= 2 && num <= 50){
+        const grid = num * num
+        for(i = 0; i < grid; i++ ) {
+            createDiv(i)
+        }
+    }else {alert("Invalid Size")}
 }
 
 function clearGrid() {
